@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript">
+    <script type="text/javascript">
+    console.log = function(msg) {
+        var ul = document.getElementById("log");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(msg));
+        ul.appendChild(li);
+    }
+
+    window.onload = function() {
+        document.getElementById("run").onclick = function() {
+	    
             var language = "javascript";
             console.log(language[0]);
             console.log(language[1]);
@@ -13,12 +23,33 @@
             language[2] = 'C';
             language[3] = 'D';
             console.log(language);
-        </script>
 
+	}
+	}
+    </script>
     </head>
 
-    <body>
+<body>
+    <div>
+        <textarea cols = "100" rows="40">
+     var language = "javascript";
+            console.log(language[0]);
+            console.log(language[1]);
+            console.log(language[2]);
+            console.log(language[3]);
 
-    </body>
-
+            language[0] = 'A';
+            language[1] = 'B';
+            language[2] = 'C';
+            language[3] = 'D';
+            console.log(language);
+      </textarea>
+    </div>
+    <div>
+        <input type="button" id="run" value="½ÇÇà"/>
+    </div>
+    <div>
+        <ul id="log" style="list-style-type:circle"></ul>
+    </div>    
+</body>
 </html>
